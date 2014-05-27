@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+     
+     <Bundle Name="Freebox Dreamvolution" Version="1.0.0.0"  
+             Manufacturer="FoxP2" 
+             UpgradeCode="6d9bdcd3-9bcf-492d-b958-b390bcb82e95" 
+             SplashScreenSourceFile="$(var.FreeboxDreamvolution.ProjectDir)Resources\SplashScreen.bmp" 
+             IconSourceFile="$(var.FreeboxDreamvolution.ProjectDir)Resources\icon.ico"             
+             >   
+       
+       <Variable Name="INSTALLDIR" bal:Overridable='yes' Value='"[ProgramFiles6432Folder]Freebox Dreamvolution"'/>
+        
+       <!-- Payload, that hast to be added to run the boostrapper application -->
+    <BootstrapperApplicationRef Id='ManagedBootstrapperApplicationHost'>
+
+      <Payload Name='BootstrapperCore.config' SourceFile='$(var.FreeboxDreamvolution.ProjectDir)BootstrapperCore.config' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.TargetPath)' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\logo.png' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\background.png' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\SplashScreen.bmp' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\icon.ico' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\LicenseTerms.txt' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\WelcomeText.rtf' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)Resources\ReadmeText.txt' />
+      <Payload SourceFile='$(var.FreeboxDreamvolution.ProjectDir)dll\Xceed.Wpf.Toolkit.dll' />
+      
+
+    </BootstrapperApplicationRef>
+       <Chain>
+
+         <PackageGroupRef Id='NetFx40Web' />
+
+         <!-- TODO: Define the list of chained packages. -->
+         <!--MsiPackage SourceFile="path\to\your.msi"-->
+         <!--/MsiPackage-->
+    </Chain>
+	</Bundle>
+</Wix>
