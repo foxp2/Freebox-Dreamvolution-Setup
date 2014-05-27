@@ -13106,7 +13106,7 @@
   </xs:simpleType>
   <xs:simpleType name="ComponentGuidIsIdEnum">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="{f79d4782-26bc-4357-b50e-6342586bfdca}">
+      <xs:enumeration value="{d08e5fbd-a97c-4138-8f72-82e156bd27d0}">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>

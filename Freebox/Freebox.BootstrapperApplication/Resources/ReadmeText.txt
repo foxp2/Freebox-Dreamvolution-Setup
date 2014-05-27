@@ -1,1 +1,0 @@
-Please update the ReadMeText.txt with your welcome text.
